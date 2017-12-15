@@ -1,3 +1,6 @@
+import { HttpClient } from '@angular/common/http';
+import { FilmsService } from './films/films.service';
+import { CoreModule } from './core/core.module';
 import { MaterialComponentsModule } from './shared/material-components.module';
 import { FilmsModule } from './films/films.module';
 import { ActorsModule } from './actors/actors.module';
@@ -17,10 +20,11 @@ import { AppComponent } from './app.component';
     SharedModule,
     ActorsModule,
     FilmsModule,
+    CoreModule,
     BrowserAnimationsModule,
     MaterialComponentsModule
   ],
-  providers: [],
+  providers: [FilmsService, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
