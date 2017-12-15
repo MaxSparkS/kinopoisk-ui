@@ -1,6 +1,6 @@
 <div class="flex-container">
     
   <div *ngFor="let film of films$ | async">
-    <app-film class="flex-block" [film]="film"></app-film>
+    <app-films-list-item class="flex-block" [film]="film"></app-films-list-item>
   </div>
 </div>

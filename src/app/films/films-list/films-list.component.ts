@@ -15,6 +15,6 @@ export class FilmsListComponent implements OnInit {
     constructor(private filmsService: FilmsService) { }
 
     ngOnInit() {
-        this.films$ = this.filmsService.getFilmsMock();
+        this.films$ = this.filmsService.getFilms(1, 5);
     }
 }
