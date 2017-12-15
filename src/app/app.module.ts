@@ -7,6 +7,9 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import {AuthModule} from './auth/auth.module';
+import {routing} from './app.routing';
+import {HomeModule} from './core/components/home/home.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { AppComponent } from './app.component';
     SharedModule,
     ActorsModule,
     FilmsModule,
+    AuthModule,
+    HomeModule,
     BrowserAnimationsModule,
-    MaterialComponentsModule
-  ],
-  providers: [],
+    MaterialComponentsModule,
+    routing
+],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

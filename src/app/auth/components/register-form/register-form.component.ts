@@ -3,7 +3,8 @@ import {Component, OnInit} from '@angular/core';
 import {Message} from 'primeng/components/common/api';
 
 import {AuthService} from '../../services/auth.service';
-import {User} from '../../../core/model/user';
+import {User} from '../../model/user';
+
 
 @Component({
     selector: 'app-register-form',

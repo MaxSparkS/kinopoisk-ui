@@ -14,7 +14,7 @@ export class HomeComponent {
     logOut(): void {
         this.authService.logOut().subscribe(isLoggedIn => {
             if (isLoggedIn === false) {
-                this.router.navigate(['/auth']);
+                this.router.navigate(['/login']);
             }
         });
     }

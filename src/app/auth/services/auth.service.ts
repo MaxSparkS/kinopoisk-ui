@@ -4,8 +4,9 @@ import {Http} from '@angular/http';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
 
-import {User} from '../../core/model/user';
+
 import {API_URL} from '../../app.component';
+import {User} from '../model/user';
 
 @Injectable()
 export class AuthService {
@@ -35,6 +36,7 @@ export class AuthService {
                 }
             })
             .catch(AuthService.handleError);
+
     }
 
     logOut(): Observable<boolean> {

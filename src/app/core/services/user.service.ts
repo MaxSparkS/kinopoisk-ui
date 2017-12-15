@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
-import {User} from '../model/user';
+
 import {Http} from '@angular/http';
 
 import {Observable} from 'rxjs/Observable';
 import {API_URL} from '../../app.component';
+import {User} from '../../auth/model/user';
 
 @Injectable()
 export class UserService {
