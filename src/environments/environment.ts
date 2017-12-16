@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  films_endpoint: 'https://gateway-service.herokuapp.com/films'
+  films_endpoint: 'https://gateway-service.herokuapp.com/films',
+  actors_endpoint: 'https://gateway-service.herokuapp.com/actors'
 };
