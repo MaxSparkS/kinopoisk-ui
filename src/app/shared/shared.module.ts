@@ -1,3 +1,5 @@
+import { CommonModule } from '@angular/common';
+import { AuthService } from './../auth/services/auth.service';
 import { MaterialComponentsModule } from './material-components.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NgModule } from '@angular/core';
@@ -8,9 +10,10 @@ import { NgModule } from '@angular/core';
     NavbarComponent
   ],
   imports: [
+    CommonModule,
     MaterialComponentsModule
   ],
-  providers: [],
+  providers: [AuthService],
   exports: [NavbarComponent]
 })
 export class SharedModule { }

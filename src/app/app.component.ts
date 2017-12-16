@@ -8,3 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
 }
+
+export const API_URL = 'https://gateway-service.herokuapp.com';
