@@ -3,11 +3,12 @@ import {ModuleWithProviders} from '@angular/core';
 import {AuthComponent} from './auth/components/auth/auth.component';
 import {HomeComponent} from './core/components/home/home.component';
 import {AuthGuard} from './auth/services/auth-guard.service';
-import {LoginFormComponent} from "./auth/components/login-form/login-form.component";
+import {LoginFormComponent} from './auth/components/login-form/login-form.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginFormComponent },
-  { path: 'home', component: HomeComponent}
+  { path: 'home', component: HomeComponent},
+  { path: '**', redirectTo: 'home'}
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
