@@ -13,4 +13,8 @@ export class FilmsService {
     public getFilms(page: number = 1, pageSize: number = 5): Observable<Film[]> {
         return this.http.get<Film[]>(environment.films_endpoint + `?page=${page}&pageSize=${pageSize}`);
     }
+
+    public getFilm(id: number): Observable<Film> {
+        return this.http.get<Film>(environment.films_endpoint + `/${id}`);
+    }
 }

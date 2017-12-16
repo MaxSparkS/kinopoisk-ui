@@ -15,7 +15,7 @@
         <button *ngIf="film.isFavorite" mat-raised-button color="warn" (click)="deleteFromFavorites()">Delete from favorites</button>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="1">
-        <button mat-raised-button color="primary">More...</button>
+        <button mat-raised-button color="primary" routerLink="/films/{{film.id}}">More...</button>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card-actions>

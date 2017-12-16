@@ -1,3 +1,6 @@
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilmsDetailsComponent } from './film-details/film-details.component';
 import { AuthService } from './../auth/services/auth.service';
 import { CoreModule } from './../core/core.module';
 import { MaterialComponentsModule } from './../shared/material-components.module';
@@ -9,17 +12,21 @@ import { NgModule } from '@angular/core';
 import { FilmsService } from './films.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppFilmsListItemComponent,
-    FilmsListComponent
+    FilmsListComponent,
+    FilmsDetailsComponent
   ],
-  providers: [FilmsService, AuthService],
+  providers: [FilmsService, AuthService, ],
   imports: [
     HttpClientModule,
     CommonModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    BrowserAnimationsModule,
+    RouterModule
   ],
-  exports: [AppFilmsListItemComponent, FilmsListComponent]
+  exports: [AppFilmsListItemComponent, FilmsListComponent, FilmsDetailsComponent]
 })
 export class FilmsModule { }
