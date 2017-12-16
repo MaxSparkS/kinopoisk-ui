@@ -1,3 +1,6 @@
+import { HttpClient } from '@angular/common/http';
+import { FilmsService } from './films/films.service';
+import { CoreModule } from './core/core.module';
 import { MaterialComponentsModule } from './shared/material-components.module';
 import { FilmsModule } from './films/films.module';
 import { ActorsModule } from './actors/actors.module';
@@ -26,7 +29,7 @@ import {HomeModule} from './core/components/home/home.module';
     MaterialComponentsModule,
     routing
 ],
-  providers: [AppComponent],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

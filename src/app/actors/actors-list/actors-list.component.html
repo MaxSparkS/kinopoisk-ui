@@ -1,1 +1,5 @@
-actors list works
+<div class="flex-container">
+  <div *ngFor="let actor of actors$ | async">
+    <app-actors-list-item class="flex-block" [actor]="actor"></app-actors-list-item>
+  </div>
+</div>
