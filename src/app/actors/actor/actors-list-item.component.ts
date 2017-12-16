@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/services/auth.service';
 import { Actor } from './../../core/models/Actor';
 import { Component, Input } from '@angular/core';
 
@@ -7,5 +8,8 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['actors-list-item.component.scss']
 })
 export class ActorComponent {
+    constructor(public authService: AuthService) {
+
+    }
     @Input() actor: Actor;
 }

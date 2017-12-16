@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { ActorsService } from './actors.service';
 import { MaterialComponentsModule } from './../shared/material-components.module';
@@ -15,7 +16,7 @@ import { NgModule } from '@angular/core';
     CommonModule,
     MaterialComponentsModule
   ],
-  providers: [ActorsService],
+  providers: [ActorsService, AuthService],
   exports: [ActorComponent, ActorsListComponent]
 })
 export class ActorsModule { }

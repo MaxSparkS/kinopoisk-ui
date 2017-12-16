@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/services/auth.service';
 import { CoreModule } from './../core/core.module';
 import { MaterialComponentsModule } from './../shared/material-components.module';
 import { FilmsListComponent } from './films-list/films-list.component';
@@ -13,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppFilmsListItemComponent,
     FilmsListComponent
   ],
-  providers: [FilmsService],
+  providers: [FilmsService, AuthService],
   imports: [
     HttpClientModule,
     CommonModule,
