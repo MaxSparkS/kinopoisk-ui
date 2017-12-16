@@ -1,3 +1,4 @@
+import { ActorDetailsComponent } from './actors/actor-details/actor-details.component';
 import { FilmsDetailsComponent } from './films/film-details/film-details.component';
 import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
@@ -8,6 +9,7 @@ import {LoginFormComponent} from './auth/components/login-form/login-form.compon
 
 const appRoutes: Routes = [
   { path: 'films/:id', component: FilmsDetailsComponent },
+  { path: 'actors/:id', component: ActorDetailsComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'home', component: HomeComponent},
   { path: '**', redirectTo: 'home'}
