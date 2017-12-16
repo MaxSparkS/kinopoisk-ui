@@ -24,9 +24,11 @@ export class AuthService {
     }
 
     login(user: User): Observable<boolean> {
+        let jsonObject;
         return this.http.post(API_URL + '/login', user)
-            .map(response => response.json())
+            .map(response => jsonObject = response.json())
             .map((currentUser: User) => {
+                window.sessionStorage.setItem('token', jsonObject.token);
                 if (!User.isNull(currentUser)) {
                     this.isLoggedIn = true;
                     return true;
@@ -35,11 +37,11 @@ export class AuthService {
                     return false;
                 }
             })
-            .catch(AuthService.handleError);
-
+          .catch(AuthService.handleError);
     }
 
     logOut(): Observable<boolean> {
+        window.sessionStorage.removeItem('token');
         this.isLoggedIn = !this.isLoggedIn;
         return Observable.of(false);
     }
