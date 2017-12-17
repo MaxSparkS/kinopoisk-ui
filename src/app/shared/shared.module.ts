@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './../auth/services/auth.service';
 import { MaterialComponentsModule } from './material-components.module';
@@ -11,7 +12,8 @@ import { NgModule } from '@angular/core';
   ],
   imports: [
     CommonModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    RouterModule
   ],
   providers: [AuthService],
   exports: [NavbarComponent]

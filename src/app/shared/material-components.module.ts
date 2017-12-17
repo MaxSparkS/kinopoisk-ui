@@ -5,6 +5,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   imports: [
@@ -13,13 +15,17 @@ import {MatGridListModule} from '@angular/material/grid-list';
       MatToolbarModule,
       MatCardModule,
       MatIconModule,
-      MatGridListModule],
+      MatGridListModule,
+      MatProgressSpinnerModule,
+      MatListModule],
   exports: [
       MatButtonModule,
       MatCheckboxModule,
       MatToolbarModule,
       MatCardModule,
       MatIconModule,
-      MatGridListModule],
+      MatGridListModule,
+      MatProgressSpinnerModule,
+      MatListModule],
 })
 export class MaterialComponentsModule { }

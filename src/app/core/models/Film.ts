@@ -7,6 +7,7 @@ export class Film {
         public name: string,
         public description: string,
         public pictureUrl: string,
-        public actors: Actor[]
+        public actors: Actor[],
+        public isFavorite: boolean
     ) { }
 }

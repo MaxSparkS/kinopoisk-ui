@@ -2,20 +2,21 @@
   <mat-card-header>
     <mat-card-title>{{film.name}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image [src]="film.pictureUrl" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="film.pictureUrl">
   <mat-card-content>
     <p>
       {{film.description}}
     </p>
   </mat-card-content>
   <mat-card-actions>
-      <mat-grid-list cols="2" rowHeight="50px">
-          <mat-grid-tile [colspan]="1">
-              <button mat-raised-button color="primary">Add to favorites</button>
-          </mat-grid-tile>
-          <mat-grid-tile [colspan]="1">
-              <button mat-raised-button color="primary">More...</button>
-          </mat-grid-tile>
-      </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="50px">
+      <mat-grid-tile *ngIf="authService.isLoggedIn" [colspan]="1">
+        <button *ngIf="!film.isFavorite" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+        <button *ngIf="film.isFavorite" mat-raised-button color="warn" (click)="deleteFromFavorites()">Delete from favorites</button>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1">
+        <button mat-raised-button color="primary" routerLink="/films/{{film.id}}">More...</button>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-card-actions>
 </mat-card>

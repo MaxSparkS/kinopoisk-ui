@@ -1,0 +1,35 @@
+<div class="spinner">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+</div>
+
+<div class="container">
+  <div *ngIf="!isLoading">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{film.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="film.pictureUrl">
+      <mat-card-content>
+        <h4>Description:</h4>
+        <p>
+          {{film.description}}
+        </p>
+        <h4>Actors:</h4>
+        <mat-list *ngFor="let actor of film.actors">
+          <mat-list-item>
+            <img matListAvatar [src]="actor.pictureUrl" [alt]="actor.fullName">
+            <h3 matLine> <a routerLink="/actors/{{actor.id}}">{{ actor.fullname }}</a></h3>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions *ngIf="authService.isLoggedIn">
+        <mat-grid-list cols="2" rowHeight="50px">
+          <mat-grid-tile [colspan]="1">
+            <button *ngIf="!film.isFavorite" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+            <button *ngIf="film.isFavorite" mat-raised-button color="warn" (click)="deleteFromFavorites()">Delete from favorites</button>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

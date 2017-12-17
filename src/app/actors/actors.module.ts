@@ -1,3 +1,6 @@
+import { RouterModule } from '@angular/router';
+import { ActorDetailsComponent } from './actor-details/actor-details.component';
+import { AuthService } from './../auth/services/auth.service';
 import { CommonModule } from '@angular/common';
 import { ActorsService } from './actors.service';
 import { MaterialComponentsModule } from './../shared/material-components.module';
@@ -9,13 +12,15 @@ import { NgModule } from '@angular/core';
 @NgModule({
   declarations: [
     ActorComponent,
-    ActorsListComponent
+    ActorsListComponent,
+    ActorDetailsComponent
   ],
   imports: [
     CommonModule,
-    MaterialComponentsModule
+    MaterialComponentsModule,
+    RouterModule
   ],
-  providers: [ActorsService],
-  exports: [ActorComponent, ActorsListComponent]
+  providers: [ActorsService, AuthService],
+  exports: [ActorComponent, ActorsListComponent, ActorDetailsComponent]
 })
 export class ActorsModule { }
