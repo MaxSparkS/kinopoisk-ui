@@ -1,3 +1,6 @@
+import { HttpClient } from '@angular/common/http';
+import { FilmsService } from './films/films.service';
+import { CoreModule } from './core/core.module';
 import { MaterialComponentsModule } from './shared/material-components.module';
 import { FilmsModule } from './films/films.module';
 import { ActorsModule } from './actors/actors.module';
@@ -7,6 +10,9 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
+import {AuthModule} from './auth/auth.module';
+import {routing} from './app.routing';
+import {HomeModule} from './core/components/home/home.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +23,12 @@ import { AppComponent } from './app.component';
     SharedModule,
     ActorsModule,
     FilmsModule,
+    AuthModule,
+    HomeModule,
     BrowserAnimationsModule,
-    MaterialComponentsModule
-  ],
+    MaterialComponentsModule,
+    routing
+],
   providers: [],
   bootstrap: [AppComponent]
 })
