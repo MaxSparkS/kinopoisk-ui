@@ -31,4 +31,15 @@ export class FilmsDetailsComponent implements OnInit {
             this.isLoading = false;
         });
     }
+
+    addToFavorites() {
+        this.filmsService.addToFavorite(this.film.id);
+        this.film.isFavorite = !this.film.isFavorite;
+    }
+
+    deleteFromFavorites() {
+        this.filmsService.deleteFromFavorites(this.film.id);
+        this.film.isFavorite = !this.film.isFavorite;
+    }
+
 }

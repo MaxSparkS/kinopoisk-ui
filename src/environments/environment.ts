@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
-  films_endpoint: 'https://gateway-service.herokuapp.com/films',
-  actors_endpoint: 'https://gateway-service.herokuapp.com/actors'
+  films_endpoint: 'http://filmsapi-dev.eu-central-1.elasticbeanstalk.com/api/films',
+  actors_endpoint: 'https://gateway-service.herokuapp.com/actors',
+  favorites_films_endpoint: 'http://usersapi-dev.eu-central-1.elasticbeanstalk.com/api/Favorites/films',
 };
