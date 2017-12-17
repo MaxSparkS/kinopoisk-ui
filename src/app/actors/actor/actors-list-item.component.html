@@ -10,11 +10,12 @@
     </mat-card-content>
     <mat-card-actions>
         <mat-grid-list cols="2" rowHeight="50px">
-            <mat-grid-tile [colspan]="1">
-                <button mat-raised-button color="primary">Add to favorites</button>
+            <mat-grid-tile *ngIf="authService.isLoggedIn" [colspan]="1">
+                <button *ngIf="!actor.isFavorite" mat-raised-button color="primary" (click)="addToFavorites()">Add to favorites</button>
+                <button *ngIf="actor.isFavorite" mat-raised-button color="warn" (click)="deleteFromFavorites()">Delete from favorites</button>
             </mat-grid-tile>
             <mat-grid-tile [colspan]="1">
-                <button mat-raised-button color="primary">More...</button>
+                <button mat-raised-button color="primary" routerLink="/actors/{{actor.id}}">More...</button>
             </mat-grid-tile>
         </mat-grid-list>
     </mat-card-actions>

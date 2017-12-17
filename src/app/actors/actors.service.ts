@@ -14,4 +14,8 @@ export class ActorsService {
     public getActors(): Observable<Actor[]> {
         return this.http.get<Actor[]>(environment.actors_endpoint).take(5);
     }
+
+    public getActor(actorId: number): Observable<Actor> {
+        return this.http.get<Actor>(environment.actors_endpoint + `/${actorId}`);
+    }
 }
