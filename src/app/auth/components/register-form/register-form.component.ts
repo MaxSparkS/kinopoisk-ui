@@ -4,6 +4,7 @@ import {Message} from 'primeng/components/common/api';
 
 import {AuthService} from '../../services/auth.service';
 import {User} from '../../model/user';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class RegisterFormComponent implements OnInit {
     model: User;
     messages: Message[] = [];
 
-    constructor(private authService: AuthService) {
+    constructor(private authService: AuthService, private router: Router) {
     }
 
     ngOnInit(): void {
@@ -28,6 +29,7 @@ export class RegisterFormComponent implements OnInit {
             .register(this.model)
             .subscribe(isRegistered => {
                 if (isRegistered) {
+                    this.router.navigate(['/login']);
                     this.messages.push({severity: 'info', summary: 'Registered successfully!'});
                 } else {
                     this.messages.push({severity: 'error', summary: 'Email already in use'});

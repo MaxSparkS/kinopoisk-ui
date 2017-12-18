@@ -4,8 +4,9 @@
     <button mat-button>Films</button>
     <button mat-button>Actors</button>
     <span class="spacer"></span>
-    
+
     <button *ngIf="!authService.isLoggedIn" mat-button routerLink='login' (click)='login()'>Login</button>
+    <button *ngIf="!authService.isLoggedIn" mat-button routerLink='login' (click)='register()'>Register</button>
     <button *ngIf="authService.isLoggedIn" mat-button routerLink='login' (click)='logout()'>Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>

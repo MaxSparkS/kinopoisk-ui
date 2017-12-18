@@ -20,4 +20,7 @@ export class NavbarComponent {
         this.authService.logOut();
         this.router.navigate(['/home']);
     }
+    register() {
+      this.router.navigate(['/register']);
+    }
 }

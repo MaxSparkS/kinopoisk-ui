@@ -6,11 +6,13 @@ import {AuthComponent} from './auth/components/auth/auth.component';
 import {HomeComponent} from './core/components/home/home.component';
 import {AuthGuard} from './auth/services/auth-guard.service';
 import {LoginFormComponent} from './auth/components/login-form/login-form.component';
+import {RegisterFormComponent} from './auth/components/register-form/register-form.component';
 
 const appRoutes: Routes = [
   { path: 'films/:id', component: FilmsDetailsComponent },
   { path: 'actors/:id', component: ActorDetailsComponent },
   { path: 'login', component: LoginFormComponent },
+  { path: 'register', component: RegisterFormComponent},
   { path: 'home', component: HomeComponent},
   { path: '**', redirectTo: 'home'}
 ];

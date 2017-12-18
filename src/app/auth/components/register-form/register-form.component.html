@@ -3,8 +3,8 @@
 <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
     <div>
         <label for="username">Username: </label>
-        <input id="username" type="email"
-               [(ngModel)]="model.email" #firstname="ngModel" name="email"
+        <input id="username" type="text"
+               [(ngModel)]="model.username" #firstname="ngModel" name="username"
                pInputText>
     </div>
     <div>
@@ -14,16 +14,10 @@
                pInputText>
     </div>
     <div>
-        <label for="firstname">First Name: </label>
-        <input id="firstname" type="text"
-               [(ngModel)]="model.firstname" #firstname="ngModel" name="firstname"
+        <label for="email">Email: </label>
+        <input id="email" type="email"
+               [(ngModel)]="model.email" #firstname="ngModel" name="email"
                pInputText>
     </div>
-    <div>
-        <label for="lastname">Last Name: </label>
-        <input id="lastname" type="text"
-               [(ngModel)]="model.lastname" #lastname="ngModel" name="lastname"
-               pInputText>
-    </div>
-    <button pButton type="submit" label="Re gister"></button>
+    <button pButton type="submit" label="Register"></button>
 </form>
